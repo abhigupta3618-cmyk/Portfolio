@@ -1,0 +1,9 @@
+{
+  "name": "abhi-gupta-portfolio",
+  "version": "1.0.0",
+  "description": "Personal AI & Software Engineering Portfolio - Abhi Gupta",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
