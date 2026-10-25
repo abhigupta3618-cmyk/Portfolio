@@ -3,7 +3,7 @@
 Personal AI & Software Engineering portfolio website showcasing my featured projects, machine learning engineering pipelines, technical stack, and interactive AI assistant.
 
 **Live GitHub Profile:** [https://github.com/abhigupta3618-cmyk](https://github.com/abhigupta3618-cmyk)
-Portfolio Link - https://abhiportfolio-ochre.vercel.app/
+
 ---
 
 ## 🚀 Featured Repositories
