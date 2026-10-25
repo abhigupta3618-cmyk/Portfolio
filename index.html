@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Abhi Gupta | AI & Software Engineer</title>
-<meta name="description" content="Abhi Gupta, a computer science student building intelligent urban systems and end-to-end machine learning pipelines." />
+<meta name="description" content="Abhi Gupta, a computer science student building intelligent urban systems, machine learning pipelines, and interactive web tools." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
@@ -81,28 +81,43 @@ h3.sub{font:700 1rem var(--sans);margin:0 0 .75rem}
 .tech{grid-row:1;grid-column:3;background:var(--gold-soft);color:var(--ink);border-radius:6px;padding:.15rem .6rem;font-size:.85rem;font-weight:500;white-space:nowrap}
 .empty{padding:2rem 0;color:var(--muted)}
 
-/* chat */
-.chat{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:start}
-.chat p{color:var(--muted);max-width:28rem}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+/* interactive panels (chat & weather) */
+.interactive-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:stretch}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
 .panel-head{padding:.9rem 1.2rem;border-bottom:1px solid var(--line);font-weight:700}
 .panel-head span{display:block;font-weight:400;color:var(--muted);font-size:.88rem}
-#chatMessages{height:16rem;overflow-y:auto;padding:1rem 1.2rem;display:flex;flex-direction:column;gap:.6rem}
+#chatMessages{height:16.5rem;overflow-y:auto;padding:1rem 1.2rem;display:flex;flex-direction:column;gap:.6rem}
 .msg{max-width:85%;padding:.6rem .9rem;border-radius:12px;overflow-wrap:anywhere}
 .msg.bot{background:var(--bg);border:1px solid var(--line)}
 .msg.me{align-self:flex-end;background:var(--ink);color:var(--bg)}
 .prompts{display:flex;gap:.5rem;padding:0 1.2rem .8rem;flex-wrap:wrap}
-.prompts button{font:inherit;font-size:.9rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:.25rem .8rem;cursor:pointer}
-.prompts button:hover{border-color:var(--gold)}
-#chatForm{display:flex;gap:.5rem;padding:.9rem 1.2rem;border-top:1px solid var(--line)}
-#chatInput{flex:1;min-width:0;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.6rem .8rem}
-#chatForm button{font:700 1rem var(--sans);color:var(--bg);background:var(--ink);border:0;border-radius:8px;padding:0 1.1rem;cursor:pointer}
+.prompts button{font:inherit;font-size:.88rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:.25rem .75rem;cursor:pointer;transition:border-color 0.15s, background 0.15s}
+.prompts button:hover{border-color:var(--gold);background:var(--surface)}
+.tool-form{display:flex;gap:.5rem;padding:.9rem 1.2rem;border-top:1px solid var(--line);margin-top:auto}
+.tool-form input{flex:1;min-width:0;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.6rem .8rem}
+.tool-form button{font:700 1rem var(--sans);color:var(--bg);background:var(--ink);border:0;border-radius:8px;padding:0 1.15rem;cursor:pointer;transition:background 0.2s}
+.tool-form button:hover{background:var(--blue)}
+
+/* weather widget specific */
+.weather-body{height:16.5rem;overflow-y:auto;padding:1.2rem;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.weather-placeholder{color:var(--muted);font-size:.95rem;line-height:1.5;max-width:22rem;margin:auto 0}
+.weather-result{width:100%;text-align:left;display:flex;flex-direction:column;gap:.8rem;animation:fadeIn 0.25s ease-in}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.weather-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.weather-city{font:700 1.25rem var(--sans);color:var(--ink);margin:0}
+.weather-badge{background:var(--gold-soft);color:var(--ink);border-radius:999px;padding:.25rem .75rem;font-size:.85rem;font-weight:600;white-space:nowrap}
+.weather-temp-block{display:flex;align-items:baseline;gap:1rem}
+.weather-temp{font:400 3rem/1 var(--serif);color:var(--ink)}
+.weather-temp-sub{font-size:.9rem;color:var(--muted);line-height:1.4}
+.weather-details{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.25rem}
+.weather-chip{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.5rem .75rem;font-size:.82rem;color:var(--muted)}
+.weather-chip strong{display:block;color:var(--ink);font-size:1rem;margin-top:.15rem}
 
 footer{border-top:1px solid var(--line);padding:2rem 0}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.95rem}
 
-@media (max-width:52rem){
-  .hero,.about,.chat{grid-template-columns:1fr;gap:2.5rem}
+@media (max-width:58rem){
+  .hero,.about,.interactive-grid{grid-template-columns:1fr;gap:2.5rem}
   .hero{padding:3.5rem 0}
   .site-nav{display:none}
   .project{grid-template-columns:2.2rem 1fr}
@@ -121,7 +136,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;color
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#chat">Ask</a></li>
+        <li><a href="#interactive">Ask & Weather</a></li>
         <li><a href="https://github.com/abhigupta3618-cmyk" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       </ul>
     </nav>
@@ -212,26 +227,54 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;color
     <p id="noProjects" class="empty" hidden>No projects match. Try another name or technology, or clear the filters.</p>
   </section>
 
-  <section id="chat" class="chat">
-    <div>
-      <h2 class="sec">Ask about the work</h2>
-      <p>Ask about my projects, technical stack or academic background and the assistant will guide you directly.</p>
+  <!-- Interactive Section: Assistant + Weather Forecaster -->
+  <section id="interactive">
+    <div style="margin-bottom: 2rem;">
+      <h2 class="sec">Interactive Assistant & Weather Forecaster</h2>
+      <p>Ask about my projects and technical background, or check live weather forecasts for any city worldwide.</p>
     </div>
-    <div class="panel">
-      <div class="panel-head">Abhi’s Assistant<span>Answers from this portfolio</span></div>
-      <div id="chatMessages" aria-live="polite" aria-label="Chat conversation">
-        <p class="msg bot">Hi! What would you like to know about Abhi’s work and projects?</p>
+    <div class="interactive-grid">
+      
+      <!-- Panel 1: Chatbot Assistant -->
+      <div class="panel">
+        <div class="panel-head">Abhi’s Assistant<span>Answers from this portfolio</span></div>
+        <div id="chatMessages" aria-live="polite" aria-label="Chat conversation">
+          <p class="msg bot">Hi! What would you like to know about Abhi’s work and projects?</p>
+        </div>
+        <div class="prompts" role="group" aria-label="Suggested questions">
+          <button type="button" data-prompt="What projects have you built?">Projects</button>
+          <button type="button" data-prompt="What technologies do you use?">Technologies</button>
+          <button type="button" data-prompt="Where can I see your GitHub?">GitHub</button>
+          <button type="button" data-prompt="Tell me about the weather forecaster">Weather Tool</button>
+        </div>
+        <form id="chatForm" class="tool-form">
+          <label class="visually-hidden" for="chatInput">Your message</label>
+          <input id="chatInput" type="text" placeholder="Write a message..." maxlength="500" autocomplete="off" required />
+          <button type="submit">Send</button>
+        </form>
       </div>
-      <div class="prompts" role="group" aria-label="Suggested questions">
-        <button type="button" data-prompt="What projects have you built?">Projects</button>
-        <button type="button" data-prompt="What technologies do you use?">Technologies</button>
-        <button type="button" data-prompt="Where can I see your GitHub?">GitHub</button>
+
+      <!-- Panel 2: Weather Forecaster -->
+      <div class="panel">
+        <div class="panel-head">Live Weather Forecaster<span>Real-time weather for any city</span></div>
+        <div id="weatherBody" class="weather-body" aria-live="polite">
+          <p class="weather-placeholder">🌍 <strong>Which city?</strong><br>Enter any city name below to see current temperature, weather conditions, and forecast.</p>
+        </div>
+        <div class="prompts" role="group" aria-label="Popular quick cities">
+          <button type="button" class="weather-quick" data-city="Jaipur">Jaipur</button>
+          <button type="button" class="weather-quick" data-city="Delhi">Delhi</button>
+          <button type="button" class="weather-quick" data-city="Mumbai">Mumbai</button>
+          <button type="button" class="weather-quick" data-city="Bengaluru">Bengaluru</button>
+          <button type="button" class="weather-quick" data-city="London">London</button>
+          <button type="button" class="weather-quick" data-city="Tokyo">Tokyo</button>
+        </div>
+        <form id="weatherForm" class="tool-form">
+          <label class="visually-hidden" for="weatherInput">Which city?</label>
+          <input id="weatherInput" type="text" placeholder="Which city? (e.g. Jaipur, London, Tokyo)..." maxlength="100" autocomplete="off" required />
+          <button type="submit">Forecast</button>
+        </form>
       </div>
-      <form id="chatForm">
-        <label class="visually-hidden" for="chatInput">Your message</label>
-        <input id="chatInput" type="text" placeholder="Write a message..." maxlength="500" autocomplete="off" required />
-        <button type="submit">Send</button>
-      </form>
+
     </div>
   </section>
 </main>
@@ -300,6 +343,9 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;color
   }
   function answer(q) {
     q = q.toLowerCase();
+    if (/weather|forecast|climate|temperature|rain|city/.test(q)) {
+      return "You can check real-time weather for any city using the Live Weather Forecaster right next to me! Just enter your city in the input box.";
+    }
     if (/project|built|work/.test(q)) {
       return "Abhi has built 5 core repositories: 1) City Pulse (AI Urban Intelligence platform), 2) Network Security ML pipeline, 3) Code With AI Quiz app, 4) Student Code Correction & Debugging utility, and 5) Factorial Calculator.";
     }
@@ -312,11 +358,11 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;color
     if (/github|contact|repo|link/.test(q)) {
       return "All of Abhi's code and repositories are available at github.com/abhigupta3618-cmyk.";
     }
-    return "I can answer questions regarding Abhi’s projects, tech stack, academic background, or GitHub repositories. Try asking one of those!";
+    return "I can answer questions regarding Abhi’s projects, tech stack, academic background, or GitHub repositories. You can also check the weather forecaster next to me!";
   }
   function ask(text) {
     add(text, "me");
-    setTimeout(function () { add(answer(text), "bot"); }, 280);
+    setTimeout(function () { add(answer(text), "bot"); }, 260);
   }
   $("#chatForm").addEventListener("submit", function (e) {
     e.preventDefault(); var v = input.value.trim(); if (!v) return; input.value = ""; ask(v);
@@ -324,6 +370,103 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;color
   document.querySelectorAll("[data-prompt]").forEach(function (b) {
     b.addEventListener("click", function () { ask(b.dataset.prompt); });
   });
+
+  /* Live Weather Forecaster */
+  var weatherBody = $("#weatherBody");
+  var weatherInput = $("#weatherInput");
+  var weatherForm = $("#weatherForm");
+
+  var weatherCodes = {
+    0: { desc: "Clear sky", icon: "☀️" },
+    1: { desc: "Mainly clear", icon: "🌤️" },
+    2: { desc: "Partly cloudy", icon: "⛅" },
+    3: { desc: "Overcast", icon: "☁️" },
+    45: { desc: "Fog", icon: "🌫️" },
+    48: { desc: "Depositing rime fog", icon: "🌫️" },
+    51: { desc: "Light drizzle", icon: "🌦️" },
+    53: { desc: "Moderate drizzle", icon: "🌦️" },
+    55: { desc: "Dense drizzle", icon: "🌧️" },
+    61: { desc: "Slight rain", icon: "🌧️" },
+    63: { desc: "Moderate rain", icon: "🌧️" },
+    65: { desc: "Heavy rain", icon: "🌧️" },
+    71: { desc: "Slight snow", icon: "❄️" },
+    73: { desc: "Moderate snow", icon: "❄️" },
+    75: { desc: "Heavy snow", icon: "❄️" },
+    80: { desc: "Rain showers", icon: "🌦️" },
+    81: { desc: "Moderate showers", icon: "🌧️" },
+    82: { desc: "Violent showers", icon: "⛈️" },
+    95: { desc: "Thunderstorm", icon: "⛈️" },
+    96: { desc: "Thunderstorm with hail", icon: "⛈️" },
+    99: { desc: "Heavy thunderstorm with hail", icon: "⛈️" }
+  };
+
+  async function fetchWeather(city) {
+    if (!city || !city.trim()) return;
+    city = city.trim();
+    weatherBody.innerHTML = '<p class="weather-placeholder">⏳ Fetching weather for <strong>' + city + '</strong>...</p>';
+    
+    try {
+      var geoUrl = "https://geocoding-api.open-meteo.com/v1/search?name=" + encodeURIComponent(city) + "&count=1&language=en&format=json";
+      var geoRes = await fetch(geoUrl);
+      var geoData = await geoRes.json();
+      
+      if (!geoData.results || geoData.results.length === 0) {
+        weatherBody.innerHTML = '<p class="weather-placeholder" style="color:#d9534f;">❌ City "<strong>' + city + '</strong>" not found.<br>Please check the spelling and try again.</p>';
+        return;
+      }
+      
+      var target = geoData.results[0];
+      var name = target.name + (target.country ? ", " + target.country : "");
+      
+      var weatherUrl = "https://api.open-meteo.com/v1/forecast?latitude=" + target.latitude + "&longitude=" + target.longitude + "&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min&timezone=auto";
+      var weatherRes = await fetch(weatherUrl);
+      var data = await weatherRes.json();
+      
+      var current = data.current;
+      var daily = data.daily;
+      var info = weatherCodes[current.weather_code] || { desc: "Clear", icon: "🌤️" };
+      var maxT = (daily && daily.temperature_2m_max && daily.temperature_2m_max[0] !== undefined) ? Math.round(daily.temperature_2m_max[0]) + "°C" : "—";
+      var minT = (daily && daily.temperature_2m_min && daily.temperature_2m_min[0] !== undefined) ? Math.round(daily.temperature_2m_min[0]) + "°C" : "—";
+
+      weatherBody.innerHTML = 
+        '<div class="weather-result">' +
+          '<div class="weather-top">' +
+            '<h3 class="weather-city">' + name + '</h3>' +
+            '<span class="weather-badge">' + info.icon + ' ' + info.desc + '</span>' +
+          '</div>' +
+          '<div class="weather-temp-block">' +
+            '<div class="weather-temp">' + Math.round(current.temperature_2m) + '°C</div>' +
+            '<div class="weather-temp-sub">' +
+              '<div>Feels like: <strong>' + Math.round(current.apparent_temperature) + '°C</strong></div>' +
+              '<div>High / Low: <strong>' + maxT + ' / ' + minT + '</strong></div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="weather-details">' +
+            '<div class="weather-chip">Humidity<strong>' + current.relative_humidity_2m + '%</strong></div>' +
+            '<div class="weather-chip">Wind Speed<strong>' + Math.round(current.wind_speed_10m) + ' km/h</strong></div>' +
+          '</div>' +
+        '</div>';
+    } catch (err) {
+      weatherBody.innerHTML = '<p class="weather-placeholder" style="color:#d9534f;">⚠️ Unable to retrieve weather data right now. Please try again.</p>';
+    }
+  }
+
+  weatherForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    var val = weatherInput.value;
+    if (!val) return;
+    weatherInput.value = "";
+    fetchWeather(val);
+  });
+
+  document.querySelectorAll(".weather-quick").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      fetchWeather(btn.dataset.city);
+    });
+  });
+
+  // Pre-load default city weather for a lively immediate display
+  fetchWeather("Jaipur");
 })();
 </script>
 </body>
