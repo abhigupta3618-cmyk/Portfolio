@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Abhi Gupta | AI & Software Engineer</title>
+<meta name="description" content="Abhi Gupta, a computer science student building intelligent urban systems and end-to-end machine learning pipelines." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#f7f8fb; --surface:#ffffff; --ink:#0b1f3a; --muted:#52627d; --line:#d9dfeb;
+  --blue:#1e4d8c; --gold:#b8921a; --gold-soft:#f3e9c4;
+  --serif:"DM Serif Display",Georgia,serif; --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0a1424;--surface:#101d33;--ink:#eef2f9;--muted:#9fb0cc;--line:#22314d;--blue:#7fb0ee;--gold:#e0b93d;--gold-soft:#2a2410}
+}
+:root[data-theme="dark"]{--bg:#0a1424;--surface:#101d33;--ink:#eef2f9;--muted:#9fb0cc;--line:#22314d;--blue:#7fb0ee;--gold:#e0b93d;--gold-soft:#2a2410}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--sans)}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--bg);padding:.6rem 1rem;z-index:20}
+.skip-link:focus{left:1rem;top:1rem}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;gap:1.5rem;height:4rem}
+.brand{font:700 1.15rem var(--sans);color:var(--ink);text-decoration:none;margin-right:auto}
+.site-nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+.site-nav a{color:var(--muted);text-decoration:none;font-weight:500}
+.site-nav a:hover{color:var(--ink)}
+.theme-toggle{font:500 .9rem var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;cursor:pointer}
+.theme-toggle:hover{border-color:var(--gold)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center;padding:6rem 0 5rem}
+h1{font:400 clamp(2.3rem,5vw,3.8rem)/1.1 var(--serif);margin:0 0 1.25rem;letter-spacing:-.01em}
+.hero-summary{max-width:34rem;color:var(--muted);font-size:1.15rem;margin:0 0 2rem}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:.8rem 1.4rem;border-radius:8px;font-weight:700;text-decoration:none;transition:background 0.2s}
+.btn:hover{background:var(--blue);color:#fff}
+.text-link{margin-left:1.25rem;font-weight:500}
+.pipeline{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.5rem 1.25rem}
+.pipeline h2{font:700 .95rem var(--sans);margin:0 0 .25rem}
+.pipeline > p{margin:0 0 1.25rem;color:var(--muted);font-size:.95rem}
+.stages{list-style:none;margin:0;padding:0;position:relative}
+.stages::before{content:"";position:absolute;left:.62rem;top:.8rem;bottom:.8rem;width:2px;background:var(--line)}
+.stages li{position:relative;padding:.35rem 0 .35rem 2.1rem;font-weight:500}
+.stages li::before{content:"";position:absolute;left:.25rem;top:.85rem;width:.8rem;height:.8rem;border-radius:50%;background:var(--surface);border:2px solid var(--blue)}
+.stages li:last-child::before{background:var(--gold);border-color:var(--gold)}
+.stages small{display:block;color:var(--muted);font-weight:400;font-size:.88rem}
+
+/* sections */
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+h2.sec{font:400 2rem/1.15 var(--serif);margin:0 0 1.5rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p{margin:0 0 1rem;max-width:34rem}
+.skills{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.skills li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.3rem .85rem;font-size:.95rem}
+h3.sub{font:700 1rem var(--sans);margin:0 0 .75rem}
+
+/* projects */
+.controls{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-bottom:1.25rem}
+.controls input,.controls select{font:inherit;font-size:1rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.6rem .85rem}
+.controls input{flex:1;min-width:14rem}
+.clear{font:inherit;background:none;border:0;color:var(--blue);cursor:pointer;text-decoration:underline}
+.count{margin:0 0 0 auto;color:var(--muted);font-size:.95rem}
+.projects{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.project{display:grid;grid-template-columns:3rem 1fr auto;gap:1rem 1.5rem;align-items:baseline;padding:1.4rem .5rem;border-bottom:1px solid var(--line);transition:background 0.15s}
+.project:hover{background:var(--surface)}
+.project .n{color:var(--gold);font:700 .95rem var(--sans)}
+.project h3{margin:0;font:400 1.45rem/1.25 var(--serif)}
+.project h3 a{color:var(--ink);text-decoration:none}
+.project h3 a:hover{color:var(--blue);text-decoration:underline}
+.project p{grid-column:2;margin:.25rem 0 0;color:var(--muted)}
+.tech{grid-row:1;grid-column:3;background:var(--gold-soft);color:var(--ink);border-radius:6px;padding:.15rem .6rem;font-size:.85rem;font-weight:500;white-space:nowrap}
+.empty{padding:2rem 0;color:var(--muted)}
+
+/* chat */
+.chat{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:start}
+.chat p{color:var(--muted);max-width:28rem}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.panel-head{padding:.9rem 1.2rem;border-bottom:1px solid var(--line);font-weight:700}
+.panel-head span{display:block;font-weight:400;color:var(--muted);font-size:.88rem}
+#chatMessages{height:16rem;overflow-y:auto;padding:1rem 1.2rem;display:flex;flex-direction:column;gap:.6rem}
+.msg{max-width:85%;padding:.6rem .9rem;border-radius:12px;overflow-wrap:anywhere}
+.msg.bot{background:var(--bg);border:1px solid var(--line)}
+.msg.me{align-self:flex-end;background:var(--ink);color:var(--bg)}
+.prompts{display:flex;gap:.5rem;padding:0 1.2rem .8rem;flex-wrap:wrap}
+.prompts button{font:inherit;font-size:.9rem;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:.25rem .8rem;cursor:pointer}
+.prompts button:hover{border-color:var(--gold)}
+#chatForm{display:flex;gap:.5rem;padding:.9rem 1.2rem;border-top:1px solid var(--line)}
+#chatInput{flex:1;min-width:0;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:.6rem .8rem}
+#chatForm button{font:700 1rem var(--sans);color:var(--bg);background:var(--ink);border:0;border-radius:8px;padding:0 1.1rem;cursor:pointer}
+
+footer{border-top:1px solid var(--line);padding:2rem 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.95rem}
+
+@media (max-width:52rem){
+  .hero,.about,.chat{grid-template-columns:1fr;gap:2.5rem}
+  .hero{padding:3.5rem 0}
+  .site-nav{display:none}
+  .project{grid-template-columns:2.2rem 1fr}
+  .tech{grid-row:auto;grid-column:2;justify-self:start}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">Abhi Gupta</a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#chat">Ask</a></li>
+        <li><a href="https://github.com/abhigupta3618-cmyk" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div id="top" class="hero">
+    <div>
+      <h1>I build intelligent software systems and machine learning pipelines.</h1>
+      <p class="hero-summary">I’m Abhi Gupta, a computer science student specializing in AI, ML, and scalable software systems. I build end-to-end applications that solve real-world problems.</p>
+      <a class="btn" href="#projects">View projects</a>
+      <a class="text-link" href="https://github.com/abhigupta3618-cmyk" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+    </div>
+    <aside class="pipeline" aria-labelledby="pl-title">
+      <h2 id="pl-title">Currently building</h2>
+      <p>Network Security ML Pipeline & Urban Intelligence platform.</p>
+      <ol class="stages">
+        <li>Data ingestion<small>MongoDB to train/test datasets</small></li>
+        <li>Data validation<small>Automated schema and column verification</small></li>
+        <li>Data transformation<small>KNN feature imputation & preprocessing</small></li>
+        <li>Model training<small>Multi-model comparison tracked with MLflow</small></li>
+      </ol>
+    </aside>
+  </div>
+
+  <section id="about">
+    <div class="about">
+      <div>
+        <h2 class="sec">About</h2>
+        <p>I’m studying Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning (Roll No: 25BCON0034).</p>
+        <p>My work combines applied machine learning, backend engineering, and algorithmic problem solving with clean architecture and automated testing.</p>
+      </div>
+      <div>
+        <h3 class="sub">Technologies & Skills</h3>
+        <ul class="skills">
+          <li>Python</li><li>JavaScript</li><li>Node.js</li><li>Express.js</li>
+          <li>Machine Learning</li><li>MLOps</li><li>NumPy</li><li>Pandas</li>
+          <li>MongoDB</li><li>SQL</li><li>HTML5 / CSS3</li><li>Git & GitHub</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="sec">Projects</h2>
+    <div class="controls">
+      <label class="visually-hidden" for="projectSearch">Search projects</label>
+      <input id="projectSearch" type="search" placeholder="Search by project or technology" autocomplete="off" />
+      <label class="visually-hidden" for="technologyFilter">Filter by technology</label>
+      <select id="technologyFilter"><option value="all">All technologies</option></select>
+      <button id="clearFilters" class="clear" type="button" hidden>Clear</button>
+      <p id="projectCount" class="count" aria-live="polite"></p>
+    </div>
+    <ul class="projects" id="projectList">
+      <li class="project" data-technologies="JavaScript, Express, IoT">
+        <span class="n">01</span>
+        <h3><a href="https://github.com/abhigupta3618-cmyk/citypulse" target="_blank" rel="noopener noreferrer">City Pulse — Urban Intelligence Platform</a></h3>
+        <span class="tech">JavaScript, Express</span>
+        <p>Mobile urban intelligence platform analyzing road surface quality, pothole hazards, and fleet telemetry (Jaipur JCTSL Bus Fleet).</p>
+      </li>
+      <li class="project" data-technologies="Python, Machine Learning, MLOps">
+        <span class="n">02</span>
+        <h3><a href="https://github.com/abhigupta3618-cmyk/networksecurity" target="_blank" rel="noopener noreferrer">Network Security — ML Phishing Detection</a></h3>
+        <span class="tech">Python, MLOps</span>
+        <p>End-to-end production ML pipeline to detect network security phishing threats, complete with DagsHub and MLflow experiment tracking.</p>
+      </li>
+      <li class="project" data-technologies="JavaScript, HTML, CSS">
+        <span class="n">03</span>
+        <h3><a href="https://github.com/abhigupta3618-cmyk/Quiz" target="_blank" rel="noopener noreferrer">Code With AI Quiz Application</a></h3>
+        <span class="tech">JavaScript, CSS</span>
+        <p>Interactive web quiz application featuring dynamic question rendering, immediate scoring feedback, and modern responsive UI styling.</p>
+      </li>
+      <li class="project" data-technologies="Python, Testing">
+        <span class="n">04</span>
+        <h3><a href="https://github.com/abhigupta3618-cmyk/Code_correction" target="_blank" rel="noopener noreferrer">Student Utilities & Debugging Suite</a></h3>
+        <span class="tech">Python</span>
+        <p>Student grade calculation utilities and unit testing exercise demonstrating the disciplined RED -> FIX -> GREEN test cycle.</p>
+      </li>
+      <li class="project" data-technologies="Python">
+        <span class="n">05</span>
+        <h3><a href="https://github.com/abhigupta3618-cmyk/Factorial-code" target="_blank" rel="noopener noreferrer">Factorial Calculator & Verification Audit</a></h3>
+        <span class="tech">Python</span>
+        <p>Clean Python mathematical application paired with an empirical fact-check audit verifying claims against actual code behavior.</p>
+      </li>
+    </ul>
+    <p id="noProjects" class="empty" hidden>No projects match. Try another name or technology, or clear the filters.</p>
+  </section>
+
+  <section id="chat" class="chat">
+    <div>
+      <h2 class="sec">Ask about the work</h2>
+      <p>Ask about my projects, technical stack or academic background and the assistant will guide you directly.</p>
+    </div>
+    <div class="panel">
+      <div class="panel-head">Abhi’s Assistant<span>Answers from this portfolio</span></div>
+      <div id="chatMessages" aria-live="polite" aria-label="Chat conversation">
+        <p class="msg bot">Hi! What would you like to know about Abhi’s work and projects?</p>
+      </div>
+      <div class="prompts" role="group" aria-label="Suggested questions">
+        <button type="button" data-prompt="What projects have you built?">Projects</button>
+        <button type="button" data-prompt="What technologies do you use?">Technologies</button>
+        <button type="button" data-prompt="Where can I see your GitHub?">GitHub</button>
+      </div>
+      <form id="chatForm">
+        <label class="visually-hidden" for="chatInput">Your message</label>
+        <input id="chatInput" type="text" placeholder="Write a message..." maxlength="500" autocomplete="off" required />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> Abhi Gupta</p>
+    <a href="https://github.com/abhigupta3618-cmyk" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* theme toggle */
+  var root = document.documentElement, toggle = $("#themeToggle");
+  var dark = matchMedia("(prefers-color-scheme: dark)").matches;
+  function applyTheme(isDark) {
+    root.setAttribute("data-theme", isDark ? "dark" : "light");
+    toggle.textContent = isDark ? "Light theme" : "Dark theme";
+    toggle.setAttribute("aria-pressed", String(isDark));
+    toggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+  }
+  applyTheme(dark);
+  toggle.addEventListener("click", function () { dark = !dark; applyTheme(dark); });
+
+  /* search and filter */
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".project"));
+  var search = $("#projectSearch"), select = $("#technologyFilter"), clear = $("#clearFilters");
+  var techs = {};
+  cards.forEach(function (c) {
+    c.dataset.technologies.split(",").forEach(function (t) { techs[t.trim()] = 1; });
+  });
+  Object.keys(techs).sort().forEach(function (t) {
+    var o = document.createElement("option"); o.value = t; o.textContent = t; select.appendChild(o);
+  });
+  function filter() {
+    var q = search.value.trim().toLowerCase(), t = select.value, shown = 0;
+    cards.forEach(function (c) {
+      var text = c.textContent.toLowerCase();
+      var okT = t === "all" || c.dataset.technologies.split(",").map(function(s){return s.trim();}).indexOf(t) > -1;
+      var show = okT && text.indexOf(q) > -1;
+      c.hidden = !show; if (show) shown++;
+    });
+    $("#noProjects").hidden = shown > 0;
+    clear.hidden = !(q || t !== "all");
+    $("#projectCount").textContent = shown + " of " + cards.length + " projects";
+  }
+  search.addEventListener("input", filter);
+  select.addEventListener("change", filter);
+  clear.addEventListener("click", function () { search.value = ""; select.value = "all"; filter(); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) {
+      e.preventDefault(); search.focus();
+    }
+  });
+  filter();
+
+  /* interactive assistant */
+  var box = $("#chatMessages"), input = $("#chatInput");
+  function add(text, who) {
+    var p = document.createElement("p"); p.className = "msg " + who; p.textContent = text;
+    box.appendChild(p); box.scrollTop = box.scrollHeight;
+  }
+  function answer(q) {
+    q = q.toLowerCase();
+    if (/project|built|work/.test(q)) {
+      return "Abhi has built 5 core repositories: 1) City Pulse (AI Urban Intelligence platform), 2) Network Security ML pipeline, 3) Code With AI Quiz app, 4) Student Code Correction & Debugging utility, and 5) Factorial Calculator.";
+    }
+    if (/tech|skill|stack|language|tool/.test(q)) {
+      return "Abhi's technical stack includes Python, JavaScript, Express.js, Node.js, NumPy, Pandas, MongoDB, SQL, Machine Learning, MLOps (MLflow, DagsHub), and HTML5/CSS3.";
+    }
+    if (/study|background|college|degree|about|student|roll/.test(q)) {
+      return "Abhi is a Computer Science and Engineering student (Roll No: 25BCON0034) specializing in Artificial Intelligence and Machine Learning.";
+    }
+    if (/github|contact|repo|link/.test(q)) {
+      return "All of Abhi's code and repositories are available at github.com/abhigupta3618-cmyk.";
+    }
+    return "I can answer questions regarding Abhi’s projects, tech stack, academic background, or GitHub repositories. Try asking one of those!";
+  }
+  function ask(text) {
+    add(text, "me");
+    setTimeout(function () { add(answer(text), "bot"); }, 280);
+  }
+  $("#chatForm").addEventListener("submit", function (e) {
+    e.preventDefault(); var v = input.value.trim(); if (!v) return; input.value = ""; ask(v);
+  });
+  document.querySelectorAll("[data-prompt]").forEach(function (b) {
+    b.addEventListener("click", function () { ask(b.dataset.prompt); });
+  });
+})();
+</script>
+</body>
+</html>
